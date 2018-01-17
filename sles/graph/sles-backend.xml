@@ -29,6 +29,15 @@
 	<edge from="client" to="firewall-client" cond="firewall"/>
 	<edge from="client" to="firewall-base"   cond="firewall"/>
 
+	<edge from="backend" cond="manual_partitioning">
+		<to>manual-partitioning</to>
+	</edge>
+
+	<order tail="manual-partitioning">
+		<head>general</head>
+		<head>partitioning</head>
+	</order>
+
 	<order tail="HEAD">
 		<head>general</head>
 	</order>
